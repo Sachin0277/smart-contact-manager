@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<html lang="en" th:replace="base::layout(~{::section})" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>This is about Page</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title th:text="${title}">About - smart contact manager!</title>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 </head>
+
 <body>
-<section>
-    <h1>This is about page of the smart contact Management System.</h1>
-    <h2> Here we are going to write about the smart contact manager.</h2>
+<section class="banner d-flex justify-content-center align-items-center">
+    <div class="container text-center">
+        <img style="width: 250px; height: 250px" class="my_profile_photo" src="img/my_pic.png" alt="Sachin Yadav">
+        <h1 class="text-uppercase">Sachin Yadav</h1>
+        <h2>Software Engineer Intern at <span class="text-primary"> Veersa Technologies</span></h2>
+        <h3> Java Backend Developer</h3>
+        <p>
+            Hello! I'm Sachin Yadav, a passionate developer who enjoys creating web applications and solving
+            problems. I have a strong background in Java Backend Development.
+        </p>
+        <p>
+            In my free time, I love to solve puzzles and play Rubik's cubes.
+            Feel free to explore my projects on GitHub or reach out to me on social media.
+        </p>
+        <div class="social-icons">
+            <a href="https://github.com/sachin0277" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github-square"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/sachinyadav0278" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://facebook.com/sachin0278" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <!-- Add more social links as needed -->
+        </div>
+
+
+
+    </div>
+    <div class="container my-5">
+        <h1 class="text-uppercase">Technologies Used For SCM</h1>
+
+        <h2 class="text-primary">1. Frontend</h2>
+        <ol type="a">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Bootstrap</li>
+            <li>Thymeleaf</li>
+        </ol>
+
+        <h2 class="text-primary">2. Backend</h2>
+        <ol type="a">
+            <li>Spring</li>
+            <li>Spring Boot</li>
+            <li>JPA</li>
+            <li>Hibernate</li>
+        </ol>
+
+        <h2 class="text-primary">3. Database</h2>
+        <ol type="a">
+            <li>PostgreSQL</li>
+        </ol>
+
+    </div>
 </section>
 </body>
+
+
 </html>

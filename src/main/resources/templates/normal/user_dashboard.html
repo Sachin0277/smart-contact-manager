@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="normal/base::layout(~{::section})" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard- Smart Contact Manager</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="card">
+            <div class="card-body my-4">
+                <div class="container text-center">
+                    <img src="" style="height: 200px; width: 200px" class="my_profile_photo "
+                         th:src="@{'/img/contact_logo.png'}" alt="profile photo"/>
+                </div>
+                <h1 class="text-center mt-3 text-secondary font-italic font-weight-light">Start Adding Your Contacts On
+                    Cloud....</h1>
+                <a th:href="@{/user/add-contact}" class="btn btn-primary mt-4 btn-block text-uppercase">Add New
+                    Contact</a>
+                <hr/>
+                <h2 style="background: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%) !important;"
+                    class=" text-center text-white my-3">Donate Us</h2>
+                <input id="payment-field" type="text" class="form-control my-2" placeholder="Enter amount here"/>
+                <div class="container text-center mt-4">
+                    <button onclick="paymentStart()" class="btn btn-success btn-block">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(() => {
+            $('.item').removeClass('active');
+            $('#home-link').addClass('active');
+        })
+    </script>
+</section>
+</body>
+</html>

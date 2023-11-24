@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="base::layout(~{::section})" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>This is signup Page</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="my-card mt-1">
+                    <div class="alert" role="alert" th:classappend="${session.message.type}" th:if="${session.message}">
+                        <p class="text-center" th:text="${session.message.content}"></p>
+                        <script>
+                            // JavaScript to remove the message after a delay (e.g., 5 seconds)
+                            setTimeout(function () {
+                                const alertElement = document.querySelector(".alert");
+                                if (alertElement) {
+                                    alertElement.remove();
+                                }
+                            }, 50000); // Remove the message after 5 seconds (adjust the delay as needed)
+                        </script>
+                    </div>
+                    <div class="container text-center">
+                        <img alt="" src="" style="width: 70px" th:src="@{/img/signupicon.png}">
+                    </div>
+                    <h3 class="text-center">Register Your Account</h3>
+                    <form action="" method="post" th:action="@{/do_register}" th:object="${user}">
+
+                        <!--  name field-->
+                        <div class="form-group ">
+                            <label for="name_field">Name</label>
+                            <input aria-describedby="emailHelp" class="form-control " id="name_field"
+                                   name="name"
+                                   placeholder="Enter Your Name" required th:value="${user.name}"
+                                   type="text"/>
+                        </div>
+                        <!--  Email field-->
+                        <div class="form-group">
+                            <label for="email_field">Email</label>
+                            <input aria-describedby="emailHelp" class="form-control" id="email_field" name="email"
+                                   placeholder="Enter Your Email" required th:value="${user.email}"
+                                   type="text"/>
+                        </div>
+
+                        <!--  Password field -->
+                        <div class="form-group">
+                            <label for="password_field">Password</label>
+                            <input aria-describedby="emailHelp" class="form-control" id="password_field" name="password"
+                                   placeholder="Enter Your Password" required type="password"/>
+                        </div>
+                        <!--User about field -->
+                        <div class="form-group">
+                           <textarea class="form-control" name="about" placeholder="Describe yourself"
+                                     rows="5" th:value="${user.about}"></textarea>
+                        </div>
+                        <!-- This is terms and condition agreement -->
+                        <div class="form-group form-check text-center">
+                            <input class="form-check-input" id="agreement" name="agreement" type="checkbox"/>
+                            <label for="agreement">Accept terms and conditions</label>
+                        </div>
+                        <div class="container text-center">
+                            <button class="btn bg-primary  text-white" type="submit">Submit</button>
+                            <button class="btn btn-warning  text-white" type="reset">Reset</button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

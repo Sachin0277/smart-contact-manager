@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<html lang="en" th:replace="base::layout(~{::section})" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>This is Home Page</title>
 </head>
 <body>
-    <section>
-        <h1>This is home page of the smart contact Management System.</h1>
-        <h2> Welcome to the smart contact manager </h2>
-    </section>
+<section class="banner d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <h1 class="font-weight-bold">Smart Contact Manager</h1>
+        <p>Start collecting your contacts in a smart way. We provide very smart and efficient way of handling
+            contacts.</p>
+        <button class="btn bg-primary btn-lg text-white"><a class="nav-link text-white" href="" th:href="@{/signin}">Get Started</a> </button>
+    </div>
+</section>
 </body>
 </html>

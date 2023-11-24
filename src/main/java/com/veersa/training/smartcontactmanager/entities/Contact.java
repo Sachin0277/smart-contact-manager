@@ -1,6 +1,9 @@
 package com.veersa.training.smartcontactmanager.entities;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "contacts")
@@ -20,6 +23,7 @@ public class Contact {
     private String description;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     public int getcId() {
@@ -93,4 +97,11 @@ public class Contact {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object o) {
+       return this.cId == ((Contact)o).getcId();
+    }
+
+
 }

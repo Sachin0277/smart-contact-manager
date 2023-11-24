@@ -1,7 +1,7 @@
 package com.veersa.training.smartcontactmanager.entities;
 
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +11,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String name;
     @Column(unique = true)
     private String email;
@@ -22,7 +23,7 @@ public class User {
     @Column(length = 500)
     private String about;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     private List<Contact> contacts = new ArrayList<>();
 
     public User() {
@@ -99,5 +100,20 @@ public class User {
 
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", enabled=" + enabled +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", about='" + about + '\'' +
+                ", contacts=" + contacts +
+                '}';
     }
 }
