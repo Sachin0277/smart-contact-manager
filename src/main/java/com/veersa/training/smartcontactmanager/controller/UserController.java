@@ -112,7 +112,7 @@ public class UserController {
         model.addAttribute("title", "Show User Contacts");
         String userName = principal.getName();
         User user = this.userRepository.getUserByUserName(userName);
-        Pageable pageable = PageRequest.of(page, 8);
+        Pageable pageable = PageRequest.of(page, 5);
         Page<Contact> contacts = this.contactRepository.findContactsByUser(user.getId(), pageable);
         model.addAttribute("contacts", contacts);
         model.addAttribute("currentPage", page);
