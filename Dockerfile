@@ -9,7 +9,7 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Use an official OpenJDK 18 runtime image as a base image for the final stage
-FROM adoptopenjdk:18-jre-hotspot-slim
+FROM adoptopenjdk:18-jdk-hotspot-bionic
 
 
 # Copy the JAR file built by Maven into the container
